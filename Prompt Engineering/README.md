@@ -1,6 +1,6 @@
 ## Prompt Engineering
 
-This directory stores files used for prompt engineering. The Assistants API notebook examined using Open AI's Assistant Endpoint. This endpoint turned out to be unnecessarily complex and costly, so I switched to the Chat Completions Endpoint. The Chat Completions API notebook is where I explored different prompts and evaluated the results against human benchmarks. 
+This directory stores files used for prompt engineering. The Assistants API notebook examined using Open AI's Assistant Endpoint. This endpoint turned out to be unnecessarily complex and costly, so I switched to the Chat Completions Endpoint. The Chat Completions API notebook is where I explored different prompts and evaluated the results against human benchmarks. The final prompt and sample output are shown below. 
 
 #### Prompt
 
@@ -27,6 +27,6 @@ response = client.chat.completions.create(
 
 **Cost**: Input is \$0.01 per 1K tokens and output is \$0.03 per 1K tokens, so typical cost per run is $0.015.
 
-#### Output
+#### Parsed Output
 
 <img src = './img/typical_output.png' width=900>
