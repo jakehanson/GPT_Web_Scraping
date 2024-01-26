@@ -7,3 +7,10 @@ The algorithm starts by iterating through local Google search results using the 
 <img src = "img/algorithm overview 2.png" width = 850>
 
 <img src = "img/benchmark_examples.png" width=750>
+
+## Directory Structure
+
+- Prompt Engineering - This directory contains workbooks related to prompt engineering and evaluation using human-scored data.
+- Hyperparameter Tuning - This directory contains workbooks and files related to tuning the parameters of the API calls, including the depth of pagination, the amount of zoom to input to the Google Maps API, and the parameters of the search grid.
+- Contact Directory - This directory contains the final results of the algorithm.
+- img - This directory contains images used in readme
