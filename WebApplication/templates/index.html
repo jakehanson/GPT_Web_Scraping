@@ -99,15 +99,42 @@
             "scrollX": true,
             "pagingType": "simple_numbers",
             "dom": 'lfrtBp',
-            "buttons": ['csv', 'excel', 'print'],
+
+            // Export Buttons (csv, excel, print)
+            "buttons": [
+                {
+                    extend: 'csv',
+                    exportOptions: {
+                        columns: ':visible',
+                        orthogonal: 'export' // This ensures the export uses the 'export' type from columnDefs, if defined.
+                    }
+                },
+                {
+                    extend: 'excel',
+                    exportOptions: {
+                        columns: ':visible',
+                        orthogonal: 'export' // This ensures the export uses the 'export' type from columnDefs, if defined.
+                    }
+                },
+                'print'
+            ],
+
+            // Rearrange column order and sort
             "order": [[1, "desc"], [3, "asc"]],
+
+            // Fix the rendering on the GPT description so it's a short description with tool tip
             "columnDefs": [
                 {
                     "targets": [2],
                     "render": function(data, type, row) {
-                        return type === 'display' && data.length > 50 ?
-                            `<span data-bs-toggle="tooltip" data-bs-html="true" title="${data}">${data.substr(0, 50)}...</span>` :
-                            data;
+                        if (type === 'display') {
+                            return data.length > 50 ? 
+                                `<span data-bs-toggle="tooltip" data-bs-html="true" title="${data}">${data.substr(0, 50)}...</span>` : 
+                                data;
+                        } else {
+                            // Return the full data for all types other than 'display' (e.g., for export)
+                            return data;
+                        }
                     }
                 },
                 { 
@@ -115,6 +142,7 @@
                     "targets": "_all"
                 }
             ],
+
             "language": {
                 "lengthMenu": "Display _MENU_ records per page",
                 "zeroRecords": "Nothing found - sorry",
