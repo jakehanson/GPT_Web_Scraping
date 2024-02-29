@@ -23,7 +23,7 @@ response = client.chat.completions.create(
 
 **Model:** GPT-4 Turbo
 
-**Prompt Tokens: ** 1345
+**Prompt Tokens:** 1345
 
 **Output Tokens:** ~150
 
@@ -31,7 +31,7 @@ response = client.chat.completions.create(
 
 #### Parsed Output
 
-<img src = './img/typical_output.png' width=900>
+<img src = './img/sample_output_1.png' width=900>
 
 #### Prompt 2: Better formatting, estimate size
 
@@ -74,6 +74,7 @@ response = client.chat.completions.create(
 )
 ```
 
+<img src = './img/sample_output_2.png' width=900>
 This prompt overvalues FL based stores, which all of these inputs are. It's overly optimistic with the potential to stock products without explicit mention. It does a good job estimating stores though.
 
 #### Prompt 3: Don't overvalue FL stores. Don't assume gourmet without explicit mention
@@ -127,3 +128,6 @@ response = client.chat.completions.create(
 )
 ```
 
+<img src = './img/sample_output_3.png' width=900>
+
+This prompt does well. Uses slightly more input tokens but input tokens are cheap. Final cost is comparable.
